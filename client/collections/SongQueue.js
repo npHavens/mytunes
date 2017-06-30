@@ -4,10 +4,15 @@ var SongQueue = Backbone.Collection.extend({
   model: SongModel,
 
   initialize: function() {
-    this.on('add', function(){
+    this.on('add remove', function(){
       if ( this.size() === 1 ) {
         this.playFirst();
       }
+    }, this);
+
+    this.on('ended', function() {
+      // Removes the first song in the Song Queue when any song is being played.  Assumption is that the first song in queue is played
+      this.remove(this.at(0));
     }, this);
   },
 
@@ -16,6 +21,6 @@ var SongQueue = Backbone.Collection.extend({
   },
 
   playFirst: function() {
-    this.models[0].play();
+    this.at(0).play();
   }
 });
