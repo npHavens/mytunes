@@ -9,7 +9,7 @@ var LibraryView = Backbone.View.extend({
 
     //event listener for add on this.collection
       //on event call render
-    this.collection.on('reset', function(){
+    this.collection.on('reset', function() {
       this.render();
     }, this);
 
@@ -26,22 +26,5 @@ var LibraryView = Backbone.View.extend({
       })
     );
   },
-
-  // fetch: function() {
-  //   $.ajax({
-  //     url: 'http://parse.sfm8.hackreactor.com/mytunes/classes/songs',
-  //     type: 'GET',
-  //     data: JSON,
-  //     contentType: 'application/json',
-  //     success: function(data) {
-  //       console.log('succeeded', data);
-  //       this.renderSongs(data.results);
-  //       this.render();
-  //     }.bind(this),
-  //     error: function(data) {
-  //       console.log('error', data);
-  //     }
-  //   });
-  // },
 
 });

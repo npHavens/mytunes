@@ -13,23 +13,5 @@ var Songs = Backbone.Collection.extend({
     return response.results;
   }
 
-  // fetch: function() {
-  //   $.ajax({
-  //     url: 'http://parse.sfm8.hackreactor.com/mytunes/classes/songs',
-  //     type: 'GET',
-  //     data: JSON,
-  //     contentType: 'application/json',
-  //     success: function(data) {
-  //       // console.log('succeeded', data);
-  //       console.log(data);
-  //       this.add(data.results);
-  //     }.bind(this),
-  //     error: function(data) {
-  //       console.log('error', data);
-  //       return false;
-  //     }
-  //   });
-  // }
-
 });
 

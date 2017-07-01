@@ -21,9 +21,11 @@
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
     <script src="views/AppView.js"></script>
+    <script src="routers/SongsRouter.js"></script>
 
     <script>
       $(function() {
+
         // set up model objects
         var library = new Songs(songData);
         var app = new AppModel({library: library});
