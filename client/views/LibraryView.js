@@ -5,7 +5,13 @@ var LibraryView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
-    this.fetch();
+    // var results = this.collection.fetch();
+
+    //event listener for add on this.collection
+      //on event call render
+    this.collection.on('reset', function(){
+      this.render();
+    }, this);
 
   },
 
@@ -21,27 +27,21 @@ var LibraryView = Backbone.View.extend({
     );
   },
 
-  fetch: function() {
-    $.ajax({
-      url: 'http://parse.CAMPUS.hackreactor.com/mytunes/classes/songs',
-      type: 'GET',
-      data: JSON,
-      contentType: 'application/json',
-      success: function(data) {
-        console.log('succeeded', data);
-        this.renderSongs(data.results);
-        this.render();
-      }.bind(this),
-      error: function(data) {
-        console.log('error', data)
-      }
-    })
-  },
-
-  renderSongs: function(array) {
-    array.forEach(function(song) {
-      this.collection.push(song);
-    }.bind(this))
-  }
+  // fetch: function() {
+  //   $.ajax({
+  //     url: 'http://parse.sfm8.hackreactor.com/mytunes/classes/songs',
+  //     type: 'GET',
+  //     data: JSON,
+  //     contentType: 'application/json',
+  //     success: function(data) {
+  //       console.log('succeeded', data);
+  //       this.renderSongs(data.results);
+  //       this.render();
+  //     }.bind(this),
+  //     error: function(data) {
+  //       console.log('error', data);
+  //     }
+  //   });
+  // },
 
 });
