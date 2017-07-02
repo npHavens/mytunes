@@ -9,7 +9,7 @@ var LibraryView = Backbone.View.extend({
 
     //event listener for add on this.collection
       //on event call render
-    this.collection.on('reset', function() {
+    this.collection.on('reset ended dequeue', function() {
       this.render();
     }, this);
 

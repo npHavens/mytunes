@@ -2,7 +2,7 @@ var songsRouter = Backbone.Router.extend({
   routes: {
     'songs':                        'songs',                //...html/#songs   => songs method
     'songs/:title':                 'songs',                //...html/#songs/Back and Forth/   => songs method
-    'songs/:title/':                'title',                //...html/#songs/Back and Forth/   => songs method
+    'songs/:title/':                'songs',                //...html/#songs/Back and Forth/   => songs method
     'songs/:title/:artist':         'songs',                //...html/#songs/Back and Forth/Aaliyah   => songs method
   },
 
@@ -25,9 +25,5 @@ var songsRouter = Backbone.Router.extend({
     //get the song from collection
     //enqueue the song using songApp method
   },
-
-  title: function(title) {
-    console.log('different function');
-  }
 });
 
