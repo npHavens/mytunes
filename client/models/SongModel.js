@@ -3,6 +3,9 @@ var SongModel = Backbone.Model.extend({
 
   initialize: function() {
     this.set('playCount', 0);
+    if (this.get('album') === undefined) {
+      this.set('album', 'Unknown');
+    }
   },
 
   play: function() {
